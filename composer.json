@@ -11,9 +11,7 @@
         }
     ],
     "require": {
-        "php": ">7.1",
-        "yiisoft/yii2": "~2.0.13",
-        "spatie/async": "~1.0.0"
+        "php": ">7.1"
     },
     "require-dev": {
         "symfony/stopwatch": "^4.0"
