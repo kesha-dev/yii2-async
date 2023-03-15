@@ -31,17 +31,20 @@ new class
      */
     public function __construct()
     {
-        if ($appConfigFile = $_SERVER['argv'][3] ?? null) {
+        // if ($appConfigFile = $_SERVER['argv'][3] ?? null) {
+        //     $appConfig = require($appConfigFile); // require first for define YII_ENV and YII_DEBUG.
+        // }
 
-            $appConfig = require($appConfigFile); // require first for define YII_ENV and YII_DEBUG.
-        }
+        $appConfigFile = __DIR__ . '/../../../../../config/async.php';
+
+        $appConfig = require($appConfigFile);
 
         foreach (self::AUTOLOAD_PATHS as $paths) {
 
             foreach ($paths as $path) {
 
                 if (file_exists($path)) {
-
+                    
                     require($path);
 
                     break;
@@ -49,6 +52,8 @@ new class
 
             }
         }
+
+        
 
         if (isset($appConfig)) {
 
