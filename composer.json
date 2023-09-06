@@ -15,7 +15,8 @@
         }
     ],
     "require": {
-        "php": ">7.1"
+        "php": ">7.1",
+        "spatie/async": "1.6.0"
     },
     "require-dev": {
         "symfony/stopwatch": "^4.0"

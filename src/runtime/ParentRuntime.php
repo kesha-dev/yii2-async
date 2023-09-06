@@ -26,7 +26,7 @@ class ParentRuntime extends BaseParentRuntime
     /**
      * @inheritDoc
      */
-    public static function createProcess($task, ?int $outputLength = 10024, ?string $binary = 'php'): Runnable
+    public static function createProcess($task, ?int $outputLength = 10024, ?string $binary = 'php', ?int $max_input_size = 100000): Runnable
     {
 
         if (!self::$isInitialised) {
@@ -47,7 +47,7 @@ class ParentRuntime extends BaseParentRuntime
             $outputLength,
             $appConfigFile
         ]);
-        
+
 
         // $process = new Process(implode(' ', [
         //     'exec php',
@@ -57,7 +57,7 @@ class ParentRuntime extends BaseParentRuntime
         //     $appConfigFile
         // ]));
 
-        
+
 
         return ParallelProcess::create($process, self::getId());
     }
